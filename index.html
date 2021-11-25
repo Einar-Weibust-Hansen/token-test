@@ -11,7 +11,7 @@
 
 <body>
   <script>
-  let requestURL = 'https://raw.githubusercontent.com/Einar-Weibust-Hansen/token-test/main/data/tokens.json';
+    let requestURL = 'https://raw.githubusercontent.com/Einar-Weibust-Hansen/token-test/main/data/tokens.json';
     let request = new XMLHttpRequest();
     request.open('GET', requestURL);
     request.responseType = 'json';
@@ -19,6 +19,7 @@
 
     request.onload = function() {
       const tokens = request.response;
+      console.log(tokens);
       changeBackground(tokens);
     }
 
@@ -26,8 +27,6 @@
       const color = obj.global.primary.value;
       document.body.style.background = color;
     }
-
-
 
   </script>
 </body>
